@@ -118,7 +118,10 @@
       const out = DATA.filter(r => {
         const matchTab = tabs.length === 0 || tabs.includes(r.tab_name);
         const matchQ = !q || r.item_name.toLowerCase().includes(q);
-        return matchTab && matchQ;	.innerHTML = out.map(r => `
+        return matchTab && matchQ;
+      });
+
+      tbody.innerHTML = out.map(r => `
         <tr>
           <td>${fmt(r.tab_name)}</td>
           <td>${fmt(r.item_name)}</td>
